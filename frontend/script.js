@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initApp = () => {
     const hubCards = document.querySelectorAll('.hub-card');
     const contentOverlay = document.getElementById('content-overlay');
     const closeBtn = document.querySelector('.close-btn');
@@ -21,22 +21,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const setStage = (stageName, push = true) => {
         // Hide all screens
         loginScreen.classList.add('hidden');
+        surpriseMessage.classList.add('hidden');
         surpriseMessage.classList.remove('active');
+        finalTransition.classList.add('hidden');
         finalTransition.classList.remove('active');
+        magicalCake.classList.add('hidden');
         magicalCake.classList.remove('active');
+        landingSection.classList.add('hidden');
         landingSection.classList.remove('active');
         document.body.classList.remove('logged-in');
 
         if (stageName === 'login') {
             loginScreen.classList.remove('hidden');
         } else if (stageName === 'surprise') {
-            loginScreen.classList.add('hidden');
+            surpriseMessage.classList.remove('hidden');
             surpriseMessage.classList.add('active');
         } else if (stageName === 'wish') {
+            finalTransition.classList.remove('hidden');
             finalTransition.classList.add('active');
         } else if (stageName === 'cake') {
+            magicalCake.classList.remove('hidden');
             magicalCake.classList.add('active');
         } else if (stageName === 'main') {
+            landingSection.classList.remove('hidden');
             landingSection.classList.add('active');
             document.body.classList.add('logged-in');
         }
@@ -58,16 +65,32 @@ document.addEventListener('DOMContentLoaded', () => {
     history.replaceState({ stage: 'login' }, "", "");
 
     // Login logic
-    loginBtn.addEventListener('click', () => {
-        const username = document.getElementById('username').value.trim().toLowerCase();
-        if (username === 'ankit') {
+    const handleLogin = () => {
+        const usernameInput = document.getElementById('username');
+        if (!usernameInput) return;
+        
+        const username = usernameInput.value.trim().toLowerCase();
+        console.log("Login attempt with:", username);
+
+        if (username === 'ankit' || username === 'ankit sir') {
             setStage('surprise');
         } else if (username === "") {
             alert('Please enter your sweet name! 🍬');
         } else {
             alert('Oops! Only Ankit (Cutu) can enter this sweet world! 🙅‍♂️🍭');
         }
-    });
+    };
+
+    if (loginBtn) {
+        loginBtn.addEventListener('click', handleLogin);
+        
+        // Also handle Enter key
+        document.getElementById('username').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleLogin();
+            }
+        });
+    }
 
     // Surprise Message Click logic -> Go to Final Transition
     messageCard.addEventListener('click', () => {
@@ -356,4 +379,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     };
-});
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}

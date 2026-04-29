@@ -388,6 +388,11 @@ body.logged-in header {
 
 #login-screen.hidden {
     transform: translateY(-100%);
+    pointer-events: none;
+}
+
+.hidden:not(#login-screen):not(#content-overlay):not(#grand-finale) {
+    display: none !important;
 }
 
 #landing {
