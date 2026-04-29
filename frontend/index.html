@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storify</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Inter:wght@400;600&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div id="particle-container"></div>
+
+    <header>
+        <button id="music-toggle" class="glass-btn">🎵 Play Music</button>
+    </header>
+
+    <main id="app">
+        <!-- Login Screen -->
+        <section id="login-screen" class="active">
+            <div class="sweet-login-container">
+                <div class="strawberry-cap">
+                    <div class="leaf"></div>
+                </div>
+                <div class="login-card">
+                    <h1 class="login-title">Sweet Login</h1>
+                    <div class="input-group">
+                        <input type="text" id="username" placeholder="Your sweet name...">
+                    </div>
+                    <button id="login-btn" class="eat-btn">Let's Eat!</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Surprise Message Screen (New) -->
+        <section id="surprise-message" class="hidden">
+            <div class="message-card">
+                <p>🌟 There's a surprise waiting for you! 😊 🎁 ✨</p>
+            </div>
+        </section>
+
+        <!-- Final Transition Screen (New) -->
+        <section id="final-transition" class="hidden">
+            <div class="wish-card">
+                <h2>🎉 Happy Birthday, Ankit Sir! 🥳 ❤️</h2>
+            </div>
+            <button id="see-surprise-btn" class="final-btn">🚀 CLICK HERE TO SEE YOUR SURPRISE! 🎁 ▶️</button>
+        </section>
+
+        <!-- Magical Cake Screen (New) -->
+        <section id="magical-cake" class="hidden">
+            <h1 class="cake-title">Magical Cake Time! ✨</h1>
+            <div class="cake-container">
+                <div class="cake">
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="tier tier-1">
+                        <div class="frosting"></div>
+                        <div class="sprinkles"></div>
+                    </div>
+                    <div class="tier tier-2">
+                        <div class="frosting"></div>
+                        <div class="sprinkles"></div>
+                    </div>
+                    <div class="tier tier-3">
+                        <div class="frosting"></div>
+                        <div class="sprinkles"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="cake-hint">Click the cake to make a wish! 🎂</p>
+            <button id="begin-magic-btn" class="magic-btn">Begin Magic! ✨</button>
+        </section>
+
+        <!-- Landing Section (hidden initially) -->
+        <section id="landing">
+            <div class="hero-content">
+                <h1 class="glowing-text">Hey <span class="name-highlight">Ankit Sir (Cutu 👀❤️)</span>, <br> Something
+                    Special for You 🎉</h1>
+                <p class="fade-in">Scroll down ya click kar... tujhe surprise milega 😏</p>
+                <div class="scroll-indicator">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="interaction-hub">
+                <div class="grid">
+                    <button class="hub-card" data-section="surprise">
+                        <div class="icon">🎁</div>
+                        <h3>Open Your Surprise</h3>
+                    </button>
+                    <button class="hub-card" data-section="special">
+                        <div class="icon">💖</div>
+                        <h3>Why You're Special</h3>
+                    </button>
+                    <button class="hub-card" data-section="memory">
+                        <div class="icon">📸</div>
+                        <h3>Memory Lane</h3>
+                    </button>
+                    <button class="hub-card" data-section="secret">
+                        <div class="icon">👀</div>
+                        <h3>Secret Message</h3>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Overlay -->
+        <div id="content-overlay" class="hidden">
+            <button class="close-btn glass-btn">&times; Close</button>
+            <div class="content-body">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Final Grand Message (hidden initially) -->
+    <div id="grand-finale" class="hidden">
+        <div class="finale-content">
+            <h1 class="glowing-text">Happy Birthday Once Again <br> Ankit Sir (Cutu 👀❤️)! 🎂</h1>
+            <p>Stay the same crazy soul — abhi to apko bhut aagey jana h! 🌟</p>
+            <button id="final-celebrate" class="celebrate-btn">Celebrate Again! 🎊</button>
+            <div class="footer-note">Made with ❤️ for you</div>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop preload="auto">
+        <source
+            src="https://ia801407.us.archive.org/21/items/happy-birthday-song-mp3/Happy%20Birthday%20Song%20-%20Instrumental.mp3"
+            type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
