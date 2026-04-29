@@ -847,3 +847,125 @@ body.logged-in header {
 
 
 
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    #app {
+        padding: 1rem;
+    }
+
+    /* Hero Text */
+    .glowing-text {
+        font-size: 2.2rem;
+    }
+
+    /* Interaction Hub Grid */
+    .grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+        gap: 1.5rem;
+    }
+
+    .hub-card {
+        padding: 1.5rem;
+    }
+
+    .hub-card .icon {
+        font-size: 2.5rem;
+    }
+
+    /* Login Screen */
+    .sweet-login-container {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .login-title {
+        font-size: 1.6rem;
+    }
+
+    /* Surprise Screens */
+    .message-card, .wish-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .message-card p, .wish-card h2 {
+        font-size: 1.4rem;
+    }
+
+    /* Cake Scaling */
+    .cake-container {
+        transform: scale(0.8);
+    }
+
+    .cake-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    /* Overlays & Content */
+    .content-body {
+        padding: 0.5rem;
+    }
+
+    .surprise-text {
+        font-size: 1.8rem;
+    }
+
+    .timeline-item {
+        flex: 0 0 260px;
+    }
+
+    .unreveal-text {
+        font-size: 1.1rem;
+    }
+
+    /* Finale */
+    #grand-finale {
+        padding: 0 20px;
+    }
+
+    .finale-content {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .finale-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .finale-content p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Buttons */
+    .final-btn, .celebrate-btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    header {
+        top: 10px;
+        right: 10px;
+    }
+
+    .glass-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .glowing-text {
+        font-size: 1.8rem;
+    }
+
+    .hub-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .cake-container {
+        transform: scale(0.7);
+    }
+}
