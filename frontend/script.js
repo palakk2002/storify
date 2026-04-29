@@ -1,3 +1,5 @@
+console.log("🌸 Sweet Surprise App Loaded - v2.1 (Fixed)");
+
 const initApp = () => {
     const hubCards = document.querySelectorAll('.hub-card');
     const contentOverlay = document.getElementById('content-overlay');
