@@ -309,6 +309,8 @@ const initApp = () => {
     const openSection = (key) => {
         contentBody.innerHTML = '';
         contentOverlay.classList.remove('hidden');
+        landingSection.classList.remove('active'); // Hide the background hub
+        landingSection.classList.add('hidden'); 
         sections[key].render();
         
         // Show grand finale button if all sections viewed
@@ -330,6 +332,8 @@ const initApp = () => {
 
     closeBtn.addEventListener('click', () => {
         contentOverlay.classList.add('hidden');
+        landingSection.classList.remove('hidden'); // Bring back the background hub
+        landingSection.classList.add('active');
     });
 
     finalCelebrate.addEventListener('click', () => {
